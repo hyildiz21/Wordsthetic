@@ -1,0 +1,310 @@
+/* Genel font ayarý */
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Container with scrolling behavior */
+.container {
+    white-space: nowrap;
+    padding: 20px;
+}
+
+/* Ensure articles are displayed in a row */
+.row {
+    display: flex;
+    flex-wrap: nowrap; /* Default: horizontal scrolling */
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Column stili */
+.col-sm {
+    padding-left: 5px; /* Kolonlar arasýnda boþluk */
+    padding-right: 5px; /* Kolonlar arasýnda boþluk */
+}
+
+#articles-container {
+    display: flex;
+    flex-wrap: wrap; /* Elemanlarýn bir satýra sýðmamasý durumunda bir alt satýra geçmesini saðlar */
+    height: 5vh; /* Yüksekliði viewport yüksekliði ile sýnýrlama (isteðe baðlý) */
+}
+
+/* Article wrapper styling */
+.article-wrapper {
+    width: 100%;
+    margin-bottom: 10px; /* Space between rows */
+    -webkit-transition: 0.15s all ease-in-out;
+    transition: 0.15s all ease-in-out;
+    border-radius: 10px;
+    padding: 5px;
+    border: 4px solid transparent;
+    cursor: pointer;
+    background-color: white;
+}
+
+    .article-wrapper:hover {
+        -webkit-box-shadow: 10px 10px 0 #4e84ff, 20px 20px 0 #4444bd;
+        box-shadow: 10px 10px 0 #4e84ff, 20px 20px 0 #4444bd;
+        border-color: #0578c5;
+        -webkit-transform: translate(-20px, -20px);
+        -ms-transform: translate(-20px, -20px);
+        transform: translate(-20px, -20px);
+    }
+
+    .article-wrapper:active {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+
+/* Flexbox and alignment for project info */
+.project-info {
+    padding-top: 20px;
+    padding: 10px;
+    display: flex; /* Use flexbox */
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    gap: 20px;
+    height: 100%; /* Ensure it takes up full height */
+}
+
+/* Flexbox and alignment for flex-pr */
+.flex-pr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Styling for the project title */
+.project-title {
+    font-size: 1.5em;
+    margin: 0;
+    font-weight: 600;
+    text-align: center; /* Center text horizontally */
+    color: black;
+}
+
+/* Styling for the project types */
+.project-type {
+    background: #b2b2fd;
+    color: #1a41cd;
+    font-weight: bold;
+    padding: 0.3em 0.7em;
+    border-radius: 15px;
+    font-size: 12px;
+    letter-spacing: -0.6px;
+}
+
+/* Styling for the project hover */
+.project-hover {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 9px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.article-wrapper:hover .project-hover {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    background-color: #a6c2f0;
+}
+
+/* Styling for the rounded container */
+.rounded-lg {
+    border-radius: 10px;
+}
+
+/* Container for project content */
+.container-project {
+    width: 100%;
+    height: 170px;
+    background: lightblue;
+    position: relative;
+}
+
+/* Hidden text styling */
+.hidden-text {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    color: black;
+}
+
+/* Show hidden text on hover */
+.article-wrapper:hover .hidden-text {
+    display: block;
+}
+
+
+/*button*/
+.pushable {
+    position: relative;
+    background: transparent;
+    padding: 0px;
+    border: none;
+    cursor: pointer;
+    outline-offset: 4px;
+    outline-color: deeppink;
+    transition: filter 250ms;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: hsl(226, 25%, 69%);
+    border-radius: 8px;
+    filter: blur(2px);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    background: linear-gradient( to right, hsl(248, 39%, 39%) 0%, hsl(248, 39%, 49%) 8%, hsl(248, 39%, 39%) 92%, hsl(248, 39%, 29%) 100% );
+}
+
+.front {
+    display: block;
+    position: relative;
+    border-radius: 8px;
+    background: hsl(248, 53%, 58%);
+    padding: 16px 32px;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1rem;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.pushable:hover {
+    filter: brightness(110%);
+}
+
+    .pushable:hover .front {
+        transform: translateY(-6px);
+        transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+    }
+
+.pushable:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+.pushable:hover .shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.pushable:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+
+.pushable:focus:not(:focus-visible) {
+    outline: none;
+}
+
+
+/*Input*/
+.input {
+    --input-focus: #2d8cf0;
+    --font-color: #323232;
+    --font-color-sub: #666;
+    --bg-color: #fff;
+    --main-color: #323232;
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 5px 10px;
+    outline: none;
+}
+
+    .input::placeholder {
+        color: var(--font-color-sub);
+        opacity: 0.8;
+    }
+
+    .input:focus {
+        border: 2px solid var(--input-focus);
+    }
+
+
+
+/* Responsive adjustments */
+
+/* For medium screens (tablet) and up */
+@media (min-width: 768px) {
+    .col-sm-2 {
+        flex: 0 0 16.6667%; /* Each column takes up 2/12 of the row */
+        max-width: 16.6667%;
+    }
+    /* Make sure the row stays horizontal on medium screens and larger */
+    .row {
+        flex-wrap: nowrap;
+    }
+    .front {
+        font-size: 1rem; /* Tablet ve üstü için font boyutu */
+        padding: 16px 32px; /* Tablet ve üstü için padding */
+    }
+}
+
+/* For small screens (mobile) */
+@media (max-width: 767px) {
+    .col-sm-2 {
+        flex: 0 0 50%; /* 2 items per row on small screens */
+        max-width: 50%;
+    }
+    /* Allow the row to wrap on small screens */
+    .row {
+        flex-wrap: wrap;
+    }
+    .front {
+        font-size: 0.875rem; /* Mobil ekranlar için daha küçük font boyutu */
+        padding: 12px 24px; /* Mobil ekranlar için daha küçük padding */
+    }
+}
+
+/* For extra-small screens (portrait phones) */
+@media (max-width: 575px) {
+    .col-sm-2 {
+        flex: 0 0 100%; /* 1 item per row on very small screens */
+        max-width: 100%;
+    }
+    /* Allow the row to wrap on very small screens */
+    .row {
+        flex-wrap: wrap;
+    }
+    .front {
+        font-size: 0.75rem; /* Çok küçük ekranlar için daha küçük font boyutu */
+        padding: 10px 20px; /* Çok küçük ekranlar için daha küçük padding */
+    }
+}
